@@ -2,6 +2,10 @@ package com.movieInfo.model;
 
 public class Info {
 
+	public Info() {
+
+	}
+
 	private String id;
 	private String original_language;
 	private String original_title;
