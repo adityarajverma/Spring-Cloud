@@ -2,38 +2,22 @@ package com.movieCatalogue.model;
 
 public class CatalogueItem {
 
-	private String name;
-	private String desc;
-	private String rating;
+	private Info info;
+	private Rating rating;
 
-	public String getName() {
-		return name;
+	public Info getInfo() {
+		return info;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setInfo(Info info) {
+		this.info = info;
 	}
 
-	public String getDesc() {
-		return desc;
-	}
-
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
-
-	public String getRating() {
+	public Rating getRating() {
 		return rating;
 	}
 
-	public void setRating(String rating) {
-		this.rating = rating;
-	}
-
-	public CatalogueItem(String name, String desc, String rating) {
-		super();
-		this.name = name;
-		this.desc = desc;
+	public void setRating(Rating rating) {
 		this.rating = rating;
 	}
 

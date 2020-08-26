@@ -2,8 +2,12 @@ package com.movieCatalogue.model;
 
 public class Rating {
 
+	public Rating() {
+
+	}
+
 	private String id;
-	private String rating;
+	private Double rating;
 
 	public String getId() {
 		return id;
@@ -13,15 +17,15 @@ public class Rating {
 		this.id = id;
 	}
 
-	public String getRating() {
+	public Double getRating() {
 		return rating;
 	}
 
-	public void setRating(String rating) {
+	public void setRating(Double rating) {
 		this.rating = rating;
 	}
 
-	public Rating(String id, String rating) {
+	public Rating(String id, Double rating) {
 		super();
 		this.id = id;
 		this.rating = rating;
