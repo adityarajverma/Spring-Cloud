@@ -1,8 +1,5 @@
 package com.movieRating.controller;
 
-import java.util.Collections;
-import java.util.List;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +12,8 @@ import com.movieRating.model.Rating;
 public class MovieRatingController {
 
 	@GetMapping("/{movieId}")
-	public List<Rating> movieRating(@PathVariable("movieId") String movieId) {
-		return Collections.singletonList(new Rating(movieId, "8"));
+	public Rating movieRating(@PathVariable("movieId") String movieId) {
+		return new Rating(movieId, (Math.random() % 10));
 	}
 
 }
