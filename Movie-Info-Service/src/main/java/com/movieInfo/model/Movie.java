@@ -2,8 +2,8 @@ package com.movieInfo.model;
 
 public class Movie {
 
-	public String id;
-	public String Name;
+	private String id;
+	private String Name;
 
 	public String getId() {
 		return id;
