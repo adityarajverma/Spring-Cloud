@@ -1,12 +1,12 @@
 package com.movieInfo.controller;
 
-import java.util.Collections;
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.movieInfo.model.Info;
 
@@ -14,10 +14,19 @@ import com.movieInfo.model.Info;
 @RequestMapping("/movieInfo")
 public class MovieInfoController {
 
-	@GetMapping("/{movieId}")
-	public List<Info> movieInfo(@PathVariable("movieId") String movieID) {
+	@Autowired
+	RestTemplate restTemplate;
 
-		return Collections.singletonList(new Info(movieID, "Transformer"));
+	@Value("${apiKey}")
+	String apiKey;
+
+	@GetMapping("/{movieId}")
+	public Info movieInfo(@PathVariable("movieId") String movieId) {
+
+		Info info = restTemplate.getForObject("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=" + apiKey,
+				Info.class);
+
+		return info;
 
 	}
 
