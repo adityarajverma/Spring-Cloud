@@ -2,6 +2,10 @@ package com.movieRating.model;
 
 public class Rating {
 
+	public Rating() {
+
+	}
+
 	private String id;
 	private Double rating;
 
